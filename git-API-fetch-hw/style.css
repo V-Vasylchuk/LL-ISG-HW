@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+#username-input {
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  box-sizing: border-box;
+}
+
+#spinner {
+  display: none;
+  text-align: center;
+}
+
+#error-message {
+  color: rgb(244, 7, 7);
+  text-align: center;
+}
+
+.repo-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header {
+  display: flex;
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+
+.header-cell {
+  flex: 1;
+  padding: 10px;
+}
+
+.repo-row {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.repo-cell {
+  flex: 1;
+  padding: 10px;
+}
+
+.repo-link {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.repo-link:hover {
+  text-decoration: underline;
+}
