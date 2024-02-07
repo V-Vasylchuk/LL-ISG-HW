@@ -1,12 +1,15 @@
 'use strict';
 
-document.addEventListener('DOMContentLoaded', function() {
-  const usernameInput = document.getElementById('username-input');
+const INPUT_USERNAME = document.getElementById('username-input');
+const LIST_REPOSITORIES = document.getElementById('repositories-list');
+const SPINNER = document.getElementById('spinner');
+const ERROR_MESSAGE = document.getElementById('error-message');
 
+document.addEventListener('DOMContentLoaded', function() {
   let timeoutId;
 
-  if (usernameInput) {
-    usernameInput.addEventListener('input', function() {
+  if (INPUT_USERNAME) {
+    INPUT_USERNAME.addEventListener('input', function() {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(fetchRepositories, 300);
     });
@@ -14,19 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 async function fetchRepositories() {
-  const usernameInput = document.getElementById('username-input');
-  const spinner = document.getElementById('spinner');
-  const repositoriesList = document.getElementById('repositories-list');
-  const errorMessage = document.getElementById('error-message');
+  const username = INPUT_USERNAME.value.trim();
 
-  const username = usernameInput.value.trim();
-  if (username === '') {
-    return;
-  }
+  if (username === '') return;
 
-  spinner.style.display = 'block';
-  repositoriesList.innerHTML = '';
-  errorMessage.textContent = '';
+  SPINNER.style.display = 'block';
+  LIST_REPOSITORIES.innerHTML = '';
+  ERROR_MESSAGE.textContent = '';
 
   try {
     const response = await fetch(`https://api.github.com/users/${username}/repos`);
@@ -37,22 +34,20 @@ async function fetchRepositories() {
     displayRepositories(data);
   } catch (error) {
     console.error(error);
-    errorMessage.textContent = `Repositories doesn\'t exist by user name: ${username}`;
+    ERROR_MESSAGE.textContent = `Repositories doesn\'t exist by user name: ${username}`;
   } finally {
-    spinner.style.display = 'none';
+    SPINNER.style.display = 'none';
   }
 }
 
 function displayRepositories(repositories) {
-  const repositoriesList = document.getElementById('repositories-list');
-  const errorMessage = document.getElementById('error-message');
 
   if (repositories.length === 0) {
-    return errorMessage.textContent = `User: ${username}, haven\'t any repository!`;
+    return ERROR_MESSAGE.textContent = `User: ${username}, haven\'t any repository!`;
   }
 
   // Clear previous contents
-  repositoriesList.innerHTML = '';
+  LIST_REPOSITORIES.innerHTML = '';
 
   // Create table header
   const tableHeader = document.createElement('div');
@@ -61,7 +56,7 @@ function displayRepositories(repositories) {
     <div class="header-cell">Repository Name</div>
     <div class="header-cell">Language</div>
   `;
-  repositoriesList.appendChild(tableHeader);
+  LIST_REPOSITORIES.appendChild(tableHeader);
 
   // Create table rows
   repositories.forEach(repo => {
@@ -83,6 +78,6 @@ function displayRepositories(repositories) {
     languageCell.textContent = repo.language || 'A few language';
     row.appendChild(languageCell);
 
-    repositoriesList.appendChild(row);
+    LIST_REPOSITORIES.appendChild(row);
   });
 }
