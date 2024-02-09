@@ -56,4 +56,4 @@ function compareObjects(firstObj, secondObj) {
   return true;
 }
 
-console.log(compareObjects(john, johnJunior));
+console.log(`Порівнюванні обєкти однакові? ${compareObjects(john, johnJunior)}`);

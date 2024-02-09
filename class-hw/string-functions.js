@@ -1,3 +1,5 @@
+'use strict';
+
 function isPalindrome(string) {
   const formattedString = string.toLowerCase().replaceAll(' ', '');
 
@@ -11,7 +13,7 @@ function toUpperCase(string) {
   return string.toUpperCase();
 }
 
-console.log(toUpperCase('hello'));
+console.log(`Hello in upper case is? ${toUpperCase('hello')}`);
 
 function uniqueStrings(arr) {
   let uniqueArr = [];
