@@ -1,0 +1,9 @@
+Homework:
+ - Create Button component with onIncrease event.
+ - Pass multiplier prop inside of Button component.
+ - Create Counter component that includes few Button components.
+
+ - Також створіть(в двух варіантах class/func component) ToDo List на прикладі цього: https://codepen.io/marekdano/pen/bVNYpq
+
+Данні можете взяти:
+  jsonplaceholder.typicode.com
