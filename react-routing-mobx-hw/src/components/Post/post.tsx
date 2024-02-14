@@ -11,4 +11,5 @@ const Post: FC<IPost> = (post) => {
     </div>
   );
 }
+
 export { Post };

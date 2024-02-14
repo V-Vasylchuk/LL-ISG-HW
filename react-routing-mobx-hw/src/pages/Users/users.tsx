@@ -10,7 +10,7 @@ function Users() {
   const [users, setUsers] = useState<IUser[]>([]);
 
   useEffect(() => {
-    getUsers().then(({ data }) => setUsers(data));
+    getUsers(10).then(({ data }) => setUsers(data));
   }, []);
 
   return (

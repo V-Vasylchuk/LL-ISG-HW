@@ -10,7 +10,7 @@ function Posts() {
   const [posts, setPosts] = useState<IPost[]>([]);
 
   useEffect(() => {
-    getPosts().then(({ data }) => setPosts(data));
+    getPosts(10).then(({ data }) => setPosts(data));
   }, []);
 
   return (
