@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
-import './home.style.css';
 import { Main } from "../Main/main";
 import { Posts } from "../Posts/posts";
 import { Users } from "../Users/users";
 import { NotFound } from "../NotFound/notFound";
 import TodoList from '../ToDos/todos';
+import './home.style.scss';
 
 function Home() {
   return (

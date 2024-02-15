@@ -4,7 +4,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 import { getPosts } from "../../services";
 import { IPost } from "../../interfaces";
 import { Post } from "../../components";
-import './posts.style.css';
+import './posts.style.scss';
 
 function Posts() {
   const [posts, setPosts] = useState<IPost[]>([]);

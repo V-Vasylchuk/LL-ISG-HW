@@ -4,7 +4,7 @@ import { Link, Route, Routes} from 'react-router-dom';
 import { IUser } from "../../interfaces";
 import { User } from '../../components';
 import { getUsers } from "../../services";
-import './users.style.css';
+import './users.style.scss';
 
 function Users() {
   const [users, setUsers] = useState<IUser[]>([]);
