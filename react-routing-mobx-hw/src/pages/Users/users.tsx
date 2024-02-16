@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Link, Route, Routes} from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, Route, Routes } from 'react-router-dom';
 
 import { IUser } from "../../interfaces";
 import { User } from '../../components';

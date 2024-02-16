@@ -1,4 +1,3 @@
-import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from "react-router-dom";
 
@@ -20,21 +19,18 @@ function Login() {
 
   return (
     <div className={'form_wrap'}>
-      <form onSubmit={handleSubmit(onSubmit)}
-        className={'form'}
-      >
+      <form onSubmit={handleSubmit(onSubmit)} className={'form'} >
         <input type={'email'}
           placeholder={'Login'}
-          {...register("login", { required: true })} />
+          {...register("login", { required: true })}
+        />
         <input type={'text'}
           placeholder={'Password'}
-          {...register("password", { required: true })} />
-        <button type="submit"
-          disabled={formState.isSubmitting}
-        >
+          {...register("password", { required: true })} 
+        />
+        <button type="submit" disabled={formState.isSubmitting} >
           Log In
         </button>
-
       </form>
     </div>
   );
