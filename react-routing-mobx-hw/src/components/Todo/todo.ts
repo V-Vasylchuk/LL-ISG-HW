@@ -12,10 +12,10 @@ class TodoStore {
     this.todos.push(todo);
   }
 
-  editTodo(id: number, updatedTodo: ITodos) {
+  editTodoTitle(id: number, newTitle: string) {
     const index = this.todos.findIndex(todo => todo.id === id);
     if (index !== -1) {
-      this.todos[index] = updatedTodo;
+      this.todos[index].title = newTitle;
     }
   }
 
@@ -26,4 +26,4 @@ class TodoStore {
 
 const todoStore = new TodoStore();
 
-export default todoStore;
+export default todoStore; 
